@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MP - Main</title>
+</head>
+    <body>
+        <div class="container">
+            <nav>
+                <a href="/">landing page</a>
+                {% if signed_in %}
+                    <a href="/logout">Log out</a>
+                {% else %}
+                    <a href="/signup">Sign up</a>
+                    <a href="/login">Log in</a>
+                {% endif %}
+            </nav>
+            <h1>Landing page</h1>
+        </div>
+    </body>
+</html>
