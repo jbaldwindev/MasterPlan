@@ -20,6 +20,17 @@ class User(db.Model):
     def __repr__(self):
         return f"Username: { self.username, self.password }"
 
+#planner id is represented as title_username
+class Planner(db.Model):
+    __tablename__ = 'planners'
+    plannerID = db.Column(db.String(61), primary_key=True)
+    plannerTitle = db.Column(db.String(40), nullable=False)
+    description = db.Column(db.String(200), nullable=False)
+    username = db.Column(db.String(20), nullable=False)
+
+    def __repr__(self):
+        return f"Planner: { self.plannerID, self.plannerTitle, self.description, self.username }"
+
 @app.route("/")
 def main():
     if 'user' in session:
@@ -64,7 +75,7 @@ def login_page():
                     else:
                         return render_template('login.html', not_found='Sign in failed')
                 else:
-                        return render_template('login.html', not_found='Sign in failed')
+                        return render_template('login.html', not_found='Username or password is incorrect')
     return render_template('login.html')
 
 @app.route("/logout")
@@ -73,7 +84,46 @@ def logout_page():
         session.pop('user', None)
     return redirect('/')
 
+@app.route("/planners")
+def planner_page():
+    if 'user' in session:
+        currentUser = session['user']
+        plannerList = db.session.query(Planner).filter(Planner.username == currentUser).all()
+        styledList = ''
+        if (plannerList):
+            for planner in plannerList:
+                styledList = styledList + '<div>' + planner.plannerTitle + '</div>'
+            return render_template('planners.html', planners=styledList)
+        return render_template('planners.html')
+    else:
+        return redirect('/signup')
+
+@app.route('/create-planner', methods=['POST'])
+def newPlannerRoute():
+    if 'user' in session and request.method == 'POST':
+        title = request.form['title']
+        description = request.form['desc']
+        potentialID = title + '_' + session['user']
+        potentialPlanner = db.session.query(Planner).get(potentialID)
+        if potentialPlanner:
+            #TODO find way to reroute and also display error to user
+            #maybe using optional parameters through url
+            print("error: planner with that title already exists")
+            redirect('/planners')
+        elif title and description:
+            createPlanner(session['user'], title, description)
+            return redirect('/planners')
+    else:
+        return redirect('/signup')
+
+#database functions
 def createUser(user, pswd):
     newUser = User(username = user, password = pswd)
     db.session.add(newUser)
+    db.session.commit()
+
+def createPlanner(username, title, description):
+    id = title + '_' + username
+    newPlanner = Planner(plannerID = id, plannerTitle = title, description = description, username = username)
+    db.session.add(newPlanner)
     db.session.commit()

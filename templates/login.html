@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <title>MP - Login</title>
 </head>
-    <body>
-        <form action="/login" method="POST">
-            <div class="container">
-              <h1>Log in</h1>
-              <hr>
-              {% if found %}
-                <h6 style="color: green;"> {{ found }}</h6>
-              {% endif %}
-
-              {% if not_found %}
-                <h6 style="color: red;"> {{ not_found }}</h6>
-              {% endif %}
-          
-              <label for="username"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="username" required>
-          
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
-              <div>
-                <button type="submit" class="signupbtn">Sign In</button>
-              </div>
-            </div>
-          </form>
-    </body>
+<body>
+    <form action="/login" method="POST">
+        <div class="container">
+          <h1>Log in</h1>
+          <hr>
+          {% if found %}
+            <h6 style="color: green;"> {{ found }}</h6>
+          {% endif %}
+          {% if not_found %}
+            <h6 style="color: red;"> {{ not_found }}</h6>
+          {% endif %}
+      
+          <label for="username"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+          <div>
+            <button type="submit" class="signupbtn">Sign In</button>
+          </div>
+        </div>
+      </form>
+</body>
 </html>
