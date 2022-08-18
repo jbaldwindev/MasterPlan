@@ -4,9 +4,7 @@ https://master-plan-proj.herokuapp.com/
 
 # TODO
 <u>Backend</u>
-* planners db table + structure
 * tasks db table + structure
-* Create planner
 * Delete planner
 * Create task
 * Delete task
@@ -34,6 +32,8 @@ https://master-plan-proj.herokuapp.com/
 * Check for/display errors for sign up
 * Check for/display errors for login
 * Sessions
+* planners db table + structure
+* Create planner
 
 # Notes
 Login and signup html files are placeholders for testing as of 8/16
