@@ -1,0 +1,42 @@
+h1 {
+   color: blue;
+   text-align: center;
+   font-family: Fantasy;
+}
+
+.class1{
+   color: blue;
+   font-family: Cursive;
+}
+
+.class2{
+   color: purple;
+   font-family: Monospace;
+}
+
+body{
+   padding: 75px;
+}
+
+.column{
+   float: left;
+   text-align: center;
+   width: 50%;
+}
+
+p{
+   float:left;
+   text-color: red;
+}
+
+.row:after{
+   content="";
+   clear: both;
+   display: table;
+}
+
+h2{
+   color:red;
+}
+
+

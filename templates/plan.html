@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/         +dAiS6JXm" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/                                                         +ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"                      +crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"                     +crossorigin="anonymous"></script>
+    <title>MasterPlan</title>
+    <link rel="stylesheet" href="planners.css"/>
+    <script defer src="script.js"></script>
+</head>
+<body>
+   <div class="container">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">MasterPlan</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle+     +navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+         <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="#">Planners</a>
+            <a class="nav-tem nav-link active" href="#">Login</a>
+         </div>
+      </div>
+      </nav>
+   </div>
+
+   <div class="all-tasks">
+      <h2 class="task-list-title">My Lists </h2>
+      <ul class="task-list" data-lists>
+         <!--<li class="active-list">School Work</li>
+         <li class="list-name">Job Work</li>
+         <li class="list-name">Groceries</li>
+         -->
+      </ul>
+
+      <form action="">
+         <input type="text" class="new list" placeholer="new list name" aria-label="new list name"/>
+         <button class="btn create" aria-label="create new list">+</button>
+      </form>
+   </div>
+
+   <div class="todo-list">
+      <div class="todo-header">
+         <h2 class="list-title">Youtube</h2>
+         <p class="task-count">3 tasks remaining</p>
+      </div>
+
+      <div class="todo-body">
+         <div class="tasks">
+            <div class="task">
+               <input type="checkbox" id="task-1"/>
+
+               <label for="task-1">
+                  <span class="custom-checkbox"></span>
+                  record todo list video
+               </label>
+            </div>
+
+            <div class="task">
+               <input type="checkbox" id="task-2" />
+
+               <label for="task-2">
+                  <span class="custom-checkbox"></span>
+                  second task
+               </label>
+            </div>
+
+            <div class="task">
+               <input type="checkbox" id="task-3" />
+
+               <label for="task-3">
+                  <span class="custom-checkbox"></span>
+                  third task
+               </label>
+            </div>
+         </div>
+
+         <div class="new-task-creator">
+             <form action="">
+               <input type="text" class="new list" placeholer="new task name" aria-label="new task name"/>
+               <button class="btn create" aria-label="create new task">+</button>
+            </form>
+         </div>
+
+         <div class="delete-stuff">
+            <button class="btn delete">Clear Completed Tasks</button>
+            <button class="btn delete">Delete List</button>
+         </div>
+
+      </div>
+   </div>
+
+
+</body>
+</html>

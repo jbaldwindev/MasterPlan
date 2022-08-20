@@ -1,0 +1,107 @@
+h1 {
+   color: blue;
+   text-align: center;
+   font-family: Fantasy;
+}
+
+.class1{
+   color: blue;
+   font-family: Cursive;
+}
+
+.class2{
+   color: purple;
+   font-family: Monospace;
+}
+
+body{
+   padding: 75px;
+   color: white;
+   background-color: #00468b;
+   display: grid;
+   grid:
+      "header header header header" auto
+      "...... lists  active ......" auto /
+      1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+
+.title{
+}
+
+.all-tasks{
+   grid-area: lists;
+}
+
+.task-list{
+   line-height: 1.7;
+   font-size: 1.2rem;
+   list-style: circle;
+   padding-left: 1.1em;
+}
+
+form{
+   display: flex;
+}
+.btn{
+   cursor: pointer;
+   background: 0;
+   border: 0;
+   padding: 0;
+   color: inherit;
+}
+
+.btn.create{
+   font-size: 1.5rem;
+   font-weight: 900;
+   margin-right: 0.25em;
+   transition: opacity 250ms ease-in;
+}
+
+.btn.create:hover{
+   opacity: 0.7;
+}
+
+.new{
+   background: transparent;
+   border: 0;
+   color: inherit;
+   border-bottom: 1px solid currentColor;
+   outline: none;
+   transition: border-bottom 150ms ease-in;
+   order: 2;
+}
+
+.new:focus{
+   border-bottom-width: 3px;
+}
+
+.new:focus:placeholder{
+   opacity: 0.2;
+}
+
+.active-list{
+   font-weight: 700;
+}
+.todo-list{
+   grid-area: active;
+}
+
+.column{
+   float: left;
+   text-align: center;
+   width: 50%;
+}
+
+p{
+   text-color: red;
+}
+
+.row:after{
+   content="";
+   clear: both;
+   display: table;
+}
+
+h2{
+   color:white;
+}
