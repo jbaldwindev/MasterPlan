@@ -1,5 +1,5 @@
 h1 {
-   color: blue;
+   color: #002f6c;
    text-align: center;
    font-family: Fantasy;
 }
@@ -16,6 +16,8 @@ h1 {
 
 body{
    padding: 75px;
+   background-color: #FFC600;
+   color: #002f6c;
 }
 
 .column{
@@ -36,7 +38,6 @@ p{
 }
 
 h2{
-   color:red;
+   color: #002f6c;
 }
-
 
